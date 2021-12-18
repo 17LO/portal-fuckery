@@ -14,6 +14,7 @@ public class Worldinf implements CommandExecutor{
         if(sender instanceof Player){
             Player p = (Player)sender;
             sender.sendMessage(p.getLocation().getWorld().getName());
+            return true;
         }
         sender.sendMessage("Muszisz być graczem!");
         return false;
