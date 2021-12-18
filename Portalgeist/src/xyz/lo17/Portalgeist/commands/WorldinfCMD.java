@@ -6,8 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class Worldinf implements CommandExecutor{
-
+public class WorldinfCMD implements CommandExecutor{
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String argstring, @NotNull String[] args) {
@@ -18,4 +17,5 @@ public class Worldinf implements CommandExecutor{
         }
         sender.sendMessage("Muszisz być graczem!");
         return false;
-    }}
+    }
+}
