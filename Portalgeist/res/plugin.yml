@@ -14,3 +14,21 @@ commands:
   worldinf:
     usage: /worldinf
     description: Podaje nazwę pliku twojego świata
+  rtp:
+    usage: /rtp
+    description: Teleportuje cię w losowe miejsce
+  ltp:
+    usage: /ltp
+    description: Teleportuje cię w losowe miejsce
+  spawn:
+    usage: /spawn
+    description: Teleportuje cię na spawn
+  stage:
+    usage: /stage [stage]
+    description: Teleportuje cię na podany stage dungeonu Prendowego, lub podaje obecnie osiągnięty max. stage
+  end:
+    usage: /end <gateway>
+    description: Teleportuje cię na wyspę endową przez podany gateway.
+  home:
+    usage: /home
+    description: Teleportuje cię na spawnpoint
