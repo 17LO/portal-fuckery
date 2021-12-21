@@ -16,16 +16,16 @@ public class Main extends JavaPlugin{
         Log("Uruchamianie...");
 
         Log("Wczytywanie komend...");
-        this.getCommand("worldinf").setExecutor(new WorldinfCMD());
-        this.getCommand("spawn").setExecutor(new SpawnCMD());
-        this.getCommand("stage").setExecutor(new StageCMD());
-        this.getCommand("end").setExecutor(new EndCMD());
-        this.getCommand("home").setExecutor(new HomeCMD());
+        this.getCommand("tworldinf").setExecutor(new WorldinfCMD());
+        this.getCommand("tspawn").setExecutor(new SpawnCMD());
+        this.getCommand("tstage").setExecutor(new StageCMD());
+        this.getCommand("tend").setExecutor(new EndCMD());
+        this.getCommand("thome").setExecutor(new HomeCMD());
 
         Log("Wczytywanie teleportu...");
         TeleportCMD tp = new TeleportCMD();
-        this.getCommand("rtp").setExecutor(tp);
-        this.getCommand("ltp").setExecutor(tp);
+        this.getCommand("trtp").setExecutor(tp);
+        this.getCommand("tltp").setExecutor(tp);
 
         Log("Rejestracja eventów...");
         new Soon();

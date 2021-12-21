@@ -11,24 +11,24 @@ website: https://github.com/17LO/portal-fuckery
 description: Our custom teleport system!
 prefix: por
 commands:
-  worldinf:
+  tworldinf:
     usage: /worldinf
     description: Podaje nazwę pliku twojego świata
-  rtp:
+  trtp:
     usage: /rtp
     description: Teleportuje cię w losowe miejsce
-  ltp:
+  tltp:
     usage: /ltp
     description: Teleportuje cię w losowe miejsce
-  spawn:
+  tspawn:
     usage: /spawn
     description: Teleportuje cię na spawn
-  stage:
+  tstage:
     usage: /stage [stage]
     description: Teleportuje cię na podany stage dungeonu Prendowego, lub podaje obecnie osiągnięty max. stage
-  end:
+  tend:
     usage: /end <gateway>
     description: Teleportuje cię na wyspę endową przez podany gateway.
-  home:
+  thome:
     usage: /home
     description: Teleportuje cię na spawnpoint
