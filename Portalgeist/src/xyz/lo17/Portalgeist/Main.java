@@ -55,7 +55,7 @@ public class Main extends JavaPlugin{
         //Zdobywanie RNG
         Random r = new Random(seed);
 
-        //Wzrór na dwukeirynkowy bound (tak, na prawdę sam go wyprowadziłem - 0% stackoverflow): U-L=B -> Rand(B)=R -> R+L=F
+        //Wzrór na dwukeirunkowy bound (tak, na prawdę sam go wyprowadziłem - 0% stackoverflow): U-L=B -> Rand(B)=R -> R+L=F
         int bound = boundUp - boundLow;
         int randomized = r.nextInt(bound);
         int finalValue = randomized+boundLow;
