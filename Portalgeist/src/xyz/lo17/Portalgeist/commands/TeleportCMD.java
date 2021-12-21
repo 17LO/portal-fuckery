@@ -8,6 +8,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 import xyz.lo17.Portalgeist.Main;
 
@@ -47,8 +49,12 @@ public class TeleportCMD implements CommandExecutor {
 
         if(!willBeHard){
             Location loc = new Location(world, x, y, z, p, 90);
+            PotionEffect upadkoodpornosc = new PotionEffect(PotionEffectType.JUMP, 15, 255, false, false, false);
+
             player.teleport(loc, TeleportCause.CHORUS_FRUIT);
             player.sendMessage("Placeholder"); //TODO: Wiadomość
+            player.addPotionEffect(upadkoodpornosc);
+
             return true;
         }
 
