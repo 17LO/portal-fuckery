@@ -31,7 +31,7 @@ public class TeleportCMD implements CommandExecutor {
         if (worldfile.equalsIgnoreCase("world")) willBeHard = false;
         else if (worldfile.equalsIgnoreCase("world_nether")) willBeHard = true;
         else{
-            player.sendMessage(ChatColor.RED + "RTP można używać tylko w Overworldzie i Netherze!");
+            player.sendMessage(ChatColor.RED + "LTP można używać tylko w Overworldzie i Netherze!");
             return true;
         }
 
@@ -44,7 +44,7 @@ public class TeleportCMD implements CommandExecutor {
 
         int x = Main.randomize(x1, x2);
         int z = Main.randomize(z1, z2);
-        int y = 230;
+        int y = 333;
         int p = Main.randomize(-179, 180);
 
         if(!willBeHard){
@@ -52,12 +52,47 @@ public class TeleportCMD implements CommandExecutor {
             PotionEffect upadkoodpornosc = new PotionEffect(PotionEffectType.JUMP, 15, 255, false, false, false);
 
             player.teleport(loc, TeleportCause.CHORUS_FRUIT);
-            player.sendMessage("Placeholder"); //TODO: Wiadomość
+            sendMessage(player, false);
             player.addPotionEffect(upadkoodpornosc);
 
             return true;
         }
 
+        y = 254;
+        boolean unsuitable = true;
+        Location FeetAndTeleportLocation = null;
+        Location HeadLocation;
+        Location StandingLocation;
+
+        while (unsuitable){
+            FeetAndTeleportLocation = new Location(world, x, y, z, p, 90);
+            HeadLocation = new Location(world, x, (y+1), z, p, 90);
+            StandingLocation = new Location(world, x, (y-1), z, p, 90);
+            boolean suitabile = false;
+
+            if (FeetAndTeleportLocation.getBlock().isEmpty()) suitabile = true;
+            if (HeadLocation.getBlock().isEmpty() && suitabile) suitabile = true;
+            if (StandingLocation.getBlock().isSolid() && suitabile) suitabile = true;
+
+            unsuitable = !suitabile;
+            y--;
+            if (y >= -666) break;
+        }
+
+        if (unsuitable){
+            player.sendMessage(ChatColor.RED + "Nie znaleziono żadnego bezpiecznego miejsca, aby cię teleportować. Spróbuj ponownie...");
+        }
+        else{
+            PotionEffect ogniochron = new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 5, 10, false, false, false);
+            player.teleport(FeetAndTeleportLocation, TeleportCause.CHORUS_FRUIT);
+            sendMessage(player, true);
+            player.addPotionEffect(ogniochron);
+        }
+
         return true;
+    }
+
+    private void sendMessage(Player player, boolean isNether){
+        player.sendMessage("Placeholder"); //TODO Wymyślić ładny tekst
     }
 }
