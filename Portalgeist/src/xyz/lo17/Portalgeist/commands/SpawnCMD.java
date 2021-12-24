@@ -16,11 +16,11 @@ public class SpawnCMD implements CommandExecutor{
         if (!(sender instanceof Player)) return false;
         Player player = (Player)sender;
 
-        double x = 0;
-        double y = 104;
-        double z = 0;
-        float pitch = 0;
-        float yaw = 0;
+        double x = 0.5;
+        double y = 105.5;
+        double z = 0.468;
+        float pitch = 90.0f;
+        float yaw = 2.4f;
         World world = sender.getServer().getWorld("Spawn");
 
         Location location = new Location(world, x, y, z, pitch, yaw);

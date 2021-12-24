@@ -18,7 +18,7 @@ public class HomeCMD implements CommandExecutor{
 
         Location spawn = player.getBedSpawnLocation();
         if (spawn == null){
-            player.sendMessage(ChatColor.RED +"Brak domu. Użyj "+ChatColor.GREEN+"/sethome"+ChatColor.RED+"!\n"+ChatColor.DARK_GRAY+ChatColor.ITALIC+"Możliwe, że chcesz iść do domu frakcyjnego, nie własnego - komenda na to zaczyna się od F, ie. "+ChatColor.ITALIC+ChatColor.GREEN+"/f home");
+            player.sendMessage(ChatColor.RED +"Brak domu! Użyj "+ChatColor.GREEN+"/sethome"+ChatColor.RED+".\n"+ChatColor.DARK_GRAY+ChatColor.ITALIC+"Możliwe, że chcesz iść do domu frakcyjnego, nie własnego - komenda na to zaczyna się od F, ie. "+ChatColor.GREEN+"/f home");
             return true;
         }
 
