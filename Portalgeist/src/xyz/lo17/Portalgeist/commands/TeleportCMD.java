@@ -49,7 +49,7 @@ public class TeleportCMD implements CommandExecutor {
 
         if(!willBeHard){
             Location loc = new Location(world, x, y, z, p, 90);
-            PotionEffect upadkoodpornosc = new PotionEffect(PotionEffectType.JUMP, 1620, 255, false, false, true);
+            PotionEffect upadkoodpornosc = new PotionEffect(PotionEffectType.JUMP, 300, 255, false, false, true);
 
             player.teleport(loc, TeleportCause.CHORUS_FRUIT);
             sendMessage(player, false);
@@ -86,7 +86,7 @@ public class TeleportCMD implements CommandExecutor {
             player.sendMessage(ChatColor.RED + "Nie znaleziono żadnego bezpiecznego miejsca, aby cię teleportować. Spróbuj ponownie...");
         }
         else{
-            PotionEffect ogniochron = new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 5, 10, false, false, false);
+            PotionEffect ogniochron = new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 300, 10, false, false, false);
             player.teleport(FeetAndTeleportLocation, TeleportCause.CHORUS_FRUIT);
             sendMessage(player, true);
             player.addPotionEffect(ogniochron);
