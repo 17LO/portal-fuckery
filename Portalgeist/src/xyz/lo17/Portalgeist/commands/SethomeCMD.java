@@ -10,7 +10,7 @@ public class SethomeCMD implements CommandExecutor{
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command arg1, @NotNull String arg2, @NotNull String[] arg3) {
-        sender.sendMessage(ChatColor.RED+"Żaden /sethome, łóżka użyj leniwcu!\n"+ChatColor.DARK_GRAY+ChatColor.ITALIC+"Se znalazł...");
+        sender.sendMessage(ChatColor.RED+"Żaden sethołm, łoożka użyj, ty leniwcu joden!\n"+ChatColor.DARK_GRAY+ChatColor.ITALIC+"Se znolozł droge na skróty...");
         return true;
     }
 }

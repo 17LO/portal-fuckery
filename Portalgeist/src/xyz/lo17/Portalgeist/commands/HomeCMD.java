@@ -1,5 +1,6 @@
 package xyz.lo17.Portalgeist.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,7 +18,7 @@ public class HomeCMD implements CommandExecutor{
 
         Location spawn = player.getBedLocation();
         if (spawn == null){
-            player.sendMessage("Brak domu. Użyj /sethome!");
+            player.sendMessage(ChatColor.RED +"Brak domu. Użyj "+ChatColor.GREEN+"/sethome"+ChatColor.RED+"!");
             return true;
         }
 
