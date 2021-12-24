@@ -12,6 +12,7 @@ public class Main extends JavaPlugin{
     public static Logger logger;
 
     private Random rand;
+    private int time = 0;
     private static Main rrp; //Randomizer Reference Point
 
     @Override
@@ -50,7 +51,7 @@ public class Main extends JavaPlugin{
         //Zdobywanie wartości "losowszej" od losowej
         int salt = rrp.getServer().getOnlinePlayers().size();
         int base = rrp.rand.nextInt();
-        int seed = salt*base/2;
+        int seed = (salt*base+rrp.time)/2;
 
         //Zdobywanie RNG
         Random r = new Random(seed);
@@ -61,6 +62,7 @@ public class Main extends JavaPlugin{
         int finalValue = randomized+boundLow;
 
         //Zwrót
+        rrp.time++;
         return finalValue;
     }
 }
