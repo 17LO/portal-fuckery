@@ -49,7 +49,7 @@ public class TeleportCMD implements CommandExecutor {
 
         if(!willBeHard){
             Location loc = new Location(world, x, y, z, p, 90);
-            PotionEffect upadkoodpornosc = new PotionEffect(PotionEffectType.JUMP, 15, 255, false, false, true);
+            PotionEffect upadkoodpornosc = new PotionEffect(PotionEffectType.JUMP, 1620, 255, false, false, true);
 
             player.teleport(loc, TeleportCause.CHORUS_FRUIT);
             sendMessage(player, false);
