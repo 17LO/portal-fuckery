@@ -34,7 +34,7 @@ public class Main extends JavaPlugin{
         this.getCommand("otherworldbackupadventurecontinue").setExecutor(new AdvContCMD());
         this.getCommand("tutorial").setExecutor(new TutorialCMD());
         this.getCommand("sethome").setExecutor(new SethomeCMD());
-        this.getCommand("tpa").setExecutor(new TpaCMD());
+        this.getCommand("devtpa").setExecutor(new TpaCMD());
 
         Log("Rejestracja eventów...");
         Soon TM = new Soon();
