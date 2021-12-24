@@ -38,3 +38,6 @@ commands:
   sethome:
     usage: /sethome
     description: Żaden /sethome, łóżka użyj leniwcu!
+  tpa:
+    usage: /tpa [obiektTeleportowany] <cel>
+    description: Teleportuje [obiektTeleportowany] do <cel>. Jeśli nie podasz [obiektTeleportowany], założymy, że chcesz teleportować siebie.
