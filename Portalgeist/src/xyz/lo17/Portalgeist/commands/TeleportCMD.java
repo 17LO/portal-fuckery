@@ -71,8 +71,11 @@ public class TeleportCMD implements CommandExecutor {
             boolean suitabile = false;
 
             if (FeetAndTeleportLocation.getBlock().isEmpty()) suitabile = true;
+            else suitabile = false;
             if (HeadLocation.getBlock().isEmpty() && suitabile) suitabile = true;
+            else suitabile = false;
             if (StandingLocation.getBlock().isSolid() && suitabile) suitabile = true;
+            else suitabile = false;
 
             unsuitable = !suitabile;
             y--;
