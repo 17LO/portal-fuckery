@@ -24,19 +24,18 @@ public class Main extends JavaPlugin{
         rrp = this;
 
         Log("Wczytywanie komend...");
-        this.getCommand("tworldinf").setExecutor(new WorldinfCMD());
-        this.getCommand("tspawn").setExecutor(new SpawnCMD());
-        this.getCommand("tstage").setExecutor(new StageCMD());
-        this.getCommand("tend").setExecutor(new EndCMD());
-        this.getCommand("thome").setExecutor(new HomeCMD());
-
-        Log("Wczytywanie teleportu...");
-        TeleportCMD tp = new TeleportCMD();
-        this.getCommand("trtp").setExecutor(tp);
-        this.getCommand("tltp").setExecutor(tp);
+        this.getCommand("worldinf").setExecutor(new WorldinfCMD());
+        this.getCommand("devspawn").setExecutor(new SpawnCMD());
+        this.getCommand("stage").setExecutor(new StageCMD());
+        this.getCommand("end").setExecutor(new EndCMD());
+        this.getCommand("home").setExecutor(new HomeCMD());
+        this.getCommand("ltp").setExecutor(new TeleportCMD());
+        this.getCommand("otherworldbackupadventurecontinue").setExecutor(new AdvContCMD());
+        this.getCommand("tutorial").setExecutor(new TutorialCMD());
+        this.getCommand("sethome").setExecutor(new SethomeCMD());
 
         Log("Rejestracja eventów...");
-        new Soon();
+        Soon TM = new Soon();
 
         Log("Portalgeist online!");
     }
