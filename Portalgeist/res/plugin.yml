@@ -6,7 +6,7 @@ author: 17LO
 api: "There is no point in putting this property. According to Spigot wiki, it doesn't even exist. The only reason, why I put it here, is because Vscode told, it's missing. For... some reason."
 authors:
   - Guzio
-  - Strudents of 17LO Gdynia
+  - Students of 17LO Gdynia
 website: https://github.com/17LO/portal-fuckery
 description: Our custom teleport system!
 prefix: por
