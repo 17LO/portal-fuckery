@@ -64,18 +64,31 @@ public class TeleportCMD implements CommandExecutor {
         Location HeadLocation;
         Location StandingLocation;
 
+        player.sendMessage("Wchodzenie w sekwencję testową na Y="+y+", X="+x+", Z="+z);
+
         while (unsuitable){
             FeetAndTeleportLocation = new Location(world, x, y, z, p, 90);
+            player.sendMessage("Testowanie pozycji Y="+y);
             HeadLocation = new Location(world, x, (y+1), z, p, 90);
+            player.sendMessage("Głowa: "+(y+1));
             StandingLocation = new Location(world, x, (y-1), z, p, 90);
+            player.sendMessage("Podstawa: "+(y-1));
             boolean suitabile = false;
 
-            if (FeetAndTeleportLocation.getBlock().isEmpty()) suitabile = true;
-            else suitabile = false;
-            if (HeadLocation.getBlock().isEmpty() && suitabile) suitabile = true;
-            else suitabile = false;
-            if (StandingLocation.getBlock().isSolid() && suitabile) suitabile = true;
-            else suitabile = false;
+            if (FeetAndTeleportLocation.getBlock().isEmpty()){
+                player.sendMessage("Nogi czyste!");
+                suitabile = true;
+            }
+            else{
+                player.sendMessage("Nogi były zastawione, przechodzę do następnego kroku."); // TODO TO JEST TO!!!!!!!!!!!!! EUREKA!!!!!! NASTĘPNY KROK!!!!!! Instrukcja `continue;`!!! Jestem geniuszem!
+            }
+
+            if (HeadLocation.getBlock().isEmpty() && suitabile){
+
+            }
+            if (StandingLocation.getBlock().isSolid() && suitabile){
+
+            }
 
             unsuitable = !suitabile;
             y--;
