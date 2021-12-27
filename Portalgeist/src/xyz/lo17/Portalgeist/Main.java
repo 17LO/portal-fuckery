@@ -26,18 +26,18 @@ public class Main extends JavaPlugin{
 
         Log("Wczytywanie komend...");
         this.getCommand("worldinf").setExecutor(new WorldinfCMD());
-        this.getCommand("devspawn").setExecutor(new SpawnCMD());
-        this.getCommand("stage").setExecutor(new StageCMD());
-        this.getCommand("end").setExecutor(new EndCMD());
+        this.getCommand("spawn").setExecutor(new SpawnCMD());
+        this.getCommand("stage").setExecutor(new StageCMD()); //TODO later-end
+        this.getCommand("end").setExecutor(new EndCMD()); //TODO later-end
         this.getCommand("home").setExecutor(new HomeCMD());
         this.getCommand("ltp").setExecutor(new TeleportCMD());
-        this.getCommand("otherworldbackupadventurecontinue").setExecutor(new AdvContCMD());
+        this.getCommand("otherworldbackupadventurecontinue").setExecutor(new AdvContCMD()); //TODO
         this.getCommand("tutorial").setExecutor(new TutorialCMD());
         this.getCommand("sethome").setExecutor(new SethomeCMD());
-        this.getCommand("devtpa").setExecutor(new TpaCMD());
+        this.getCommand("devtpa").setExecutor(new TpaCMD()); //TODO
 
         Log("Rejestracja eventów...");
-        Soon TM = new Soon();
+        Soon TM = new Soon(); //TODO
 
         Log("Portalgeist online!");
     }

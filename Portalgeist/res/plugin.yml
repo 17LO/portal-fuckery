@@ -20,7 +20,7 @@ commands:
   ltp:
     usage: /ltp
     description: Teleportuje cię w losowe miejsce
-  devspawn:
+  spawn:
     usage: /spawn
     description: Teleportuje cię na spawn
   stage:

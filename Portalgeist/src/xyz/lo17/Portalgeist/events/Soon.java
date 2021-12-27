@@ -1,3 +1,9 @@
 package xyz.lo17.Portalgeist.events;
 
-public class Soon {}
+import org.bukkit.entity.Player;
+
+public class Soon {
+    public static void savePlayerPos(Player player){
+        //TODO :le_pain:
+    }
+}

@@ -9,12 +9,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.jetbrains.annotations.NotNull;
 
+import xyz.lo17.Portalgeist.events.Soon;
+
 public class SpawnCMD implements CommandExecutor{
 
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command arg1, @NotNull String arg2, @NotNull String[] arg3) {
         if (!(sender instanceof Player)) return false;
         Player player = (Player)sender;
+        Soon.savePlayerPos(player);
 
         double x = 0.5;
         double y = 105.5;
