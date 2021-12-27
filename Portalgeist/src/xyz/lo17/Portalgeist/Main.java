@@ -27,8 +27,8 @@ public class Main extends JavaPlugin{
         Log("Wczytywanie komend...");
         this.getCommand("worldinf").setExecutor(new WorldinfCMD());
         this.getCommand("spawn").setExecutor(new SpawnCMD());
-        this.getCommand("stage").setExecutor(new StageCMD()); //TODO later-end
-        this.getCommand("end").setExecutor(new EndCMD()); //TODO later-end
+        this.getCommand("stage").setExecutor(new StageCMD()); //TODO later
+        this.getCommand("end").setExecutor(new EndCMD()); //TODO later
         this.getCommand("home").setExecutor(new HomeCMD());
         this.getCommand("ltp").setExecutor(new TeleportCMD());
         this.getCommand("otherworldbackupadventurecontinue").setExecutor(new AdvContCMD()); //TODO
