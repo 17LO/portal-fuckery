@@ -79,7 +79,7 @@ public class TeleportCMD implements CommandExecutor {
         }
 
         if (suitableSpot){
-            PotionEffect ogniochron = new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 300, 10, false, false, false);
+            PotionEffect ogniochron = new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 60, 10, false, false, false);
             player.teleport(FeetAndTeleportLocation, TeleportCause.CHORUS_FRUIT);
             sendMessage(player, true);
             player.addPotionEffect(ogniochron);
@@ -92,6 +92,18 @@ public class TeleportCMD implements CommandExecutor {
     }
 
     private void sendMessage(Player player, boolean isNether){
-        player.sendMessage("Placeholder"); //TODO Wymyślić ładny tekst
+        
+        Location location = player.getLocation();
+        int x = (int)location.getX();
+        int y = (int)location.getY();
+        int z = (int)location.getZ();
+
+
+        player.sendMessage(ChatColor.YELLOW+"Tepnięto na "+ChatColor.BOLD+"X:"+ChatColor.RED+x+ChatColor.YELLOW+" Y:"+ChatColor.GREEN+y+ChatColor.YELLOW+" Z:"+ChatColor.AQUA+z);
+        player.sendMessage(ChatColor.BLACK+""+ChatColor.ITALIC+"\n\nDisclaimer:");
+
+        if(!isNether) player.sendMessage(ChatColor.GRAY+"Nie martw się, że spadasz. Masz 15s prawie całkowitej ochrony przed upadkiem.");
+        if(isNether) player.sendMessage(ChatColor.GOLD+"Możesz pojawić się na magmablocku/jedną nogą w ogniu, ale nie musisz się obawiać. Masz 5s całkowitej ochrony przed ogniem.");
+        if(isNether) player.sendMessage(ChatColor.RED+"UWAGA!!! Istnieje ryzyko, że pojawisz się na krawędzi przepaści/lawy. Rozejrzyj się po okolicy, zanim postawisz krok.");
     }
 }
