@@ -58,51 +58,57 @@ public class TeleportCMD implements CommandExecutor {
             return true;
         }
 
-        y = 666;
-        boolean unsuitable = true;
+        y = 256;
+        boolean suitableSpot = false;
         Location FeetAndTeleportLocation = null;
         Location HeadLocation;
         Location StandingLocation;
 
-        player.sendMessage("Wchodzenie w sekwencję testową na Y="+y+", X="+x+", Z="+z);
+        while (!suitableSpot && y > -128) {
+            y--;
 
-        while (unsuitable){
             FeetAndTeleportLocation = new Location(world, x, y, z, p, 90);
             player.sendMessage("Testowanie pozycji Y="+y);
             HeadLocation = new Location(world, x, (y+1), z, p, 90);
             player.sendMessage("Głowa: "+(y+1));
             StandingLocation = new Location(world, x, (y-1), z, p, 90);
             player.sendMessage("Podstawa: "+(y-1));
-            boolean suitabile = false;
 
-            if (FeetAndTeleportLocation.getBlock().isEmpty()){
-                player.sendMessage("Nogi czyste!");
-                suitabile = true;
+            if (!FeetAndTeleportLocation.getBlock().isEmpty()){
+                player.sendMessage("Nogi zajęte; idę do następnej pozycji!");
+                continue;
             }
             else{
-                player.sendMessage("Nogi były zastawione, przechodzę do następnego kroku."); // TODO TO JEST TO!!!!!!!!!!!!! EUREKA!!!!!! NASTĘPNY KROK!!!!!! Instrukcja `continue;`!!! Jestem geniuszem!
+                player.sendMessage("Nogi pasują; idę do następnej części ciała!");
             }
 
-            if (HeadLocation.getBlock().isEmpty() && suitabile){
-
+            if (!HeadLocation.getBlock().isEmpty()){
+                player.sendMessage("Głowa zajęta; idę do następnej pozycji!");
+                continue;
             }
-            if (StandingLocation.getBlock().isSolid() && suitabile){
-
+            else{
+                player.sendMessage("Głowa pasuje; idę do następnej części ciała!");
             }
 
-            unsuitable = !suitabile;
-            y--;
-            if (y >= -666) break;
+            if (!StandingLocation.getBlock().isSolid()){
+                player.sendMessage("Stopy zajęte; idę do następnej pozycji!");
+                continue;
+            }
+            else{
+                player.sendMessage("Stopy pasują; tepam!");
+            }
+
+            suitableSpot = true;
         }
 
-        if (unsuitable){
-            player.sendMessage(ChatColor.RED + "Nie znaleziono żadnego bezpiecznego miejsca, aby cię teleportować. Spróbuj ponownie...");
-        }
-        else{
+        if (suitableSpot){
             PotionEffect ogniochron = new PotionEffect(PotionEffectType.FIRE_RESISTANCE, 300, 10, false, false, false);
             player.teleport(FeetAndTeleportLocation, TeleportCause.CHORUS_FRUIT);
             sendMessage(player, true);
             player.addPotionEffect(ogniochron);
+        }
+        else{
+            player.sendMessage(ChatColor.RED + "Nie znaleziono żadnego bezpiecznego miejsca, aby cię teleportować. Spróbuj ponownie...");
         }
 
         return true;
