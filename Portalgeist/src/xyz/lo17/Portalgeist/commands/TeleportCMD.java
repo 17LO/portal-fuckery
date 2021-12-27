@@ -98,7 +98,6 @@ public class TeleportCMD implements CommandExecutor {
         int y = (int)location.getY();
         int z = (int)location.getZ();
 
-
         player.sendMessage(ChatColor.YELLOW+"Tepnięto na "+ChatColor.BOLD+"X:"+ChatColor.RED+x+ChatColor.YELLOW+" Y:"+ChatColor.GREEN+y+ChatColor.YELLOW+" Z:"+ChatColor.AQUA+z);
         player.sendMessage(ChatColor.BLACK+""+ChatColor.ITALIC+"\n\nDisclaimer:");
 
