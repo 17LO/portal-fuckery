@@ -68,36 +68,13 @@ public class TeleportCMD implements CommandExecutor {
             y--;
 
             FeetAndTeleportLocation = new Location(world, x, y, z, p, 90);
-            player.sendMessage("Testowanie pozycji Y="+y);
             HeadLocation = new Location(world, x, (y+1), z, p, 90);
-            player.sendMessage("Głowa: "+(y+1));
             StandingLocation = new Location(world, x, (y-1), z, p, 90);
-            player.sendMessage("Podstawa: "+(y-1));
 
-            if (!FeetAndTeleportLocation.getBlock().isEmpty()){
-                player.sendMessage("Nogi zajęte; idę do następnej pozycji!");
-                continue;
-            }
-            else{
-                player.sendMessage("Nogi pasują; idę do następnej części ciała!");
-            }
-
-            if (!HeadLocation.getBlock().isEmpty()){
-                player.sendMessage("Głowa zajęta; idę do następnej pozycji!");
-                continue;
-            }
-            else{
-                player.sendMessage("Głowa pasuje; idę do następnej części ciała!");
-            }
-
-            if (!StandingLocation.getBlock().isSolid()){
-                player.sendMessage("Stopy zajęte; idę do następnej pozycji!");
-                continue;
-            }
-            else{
-                player.sendMessage("Stopy pasują; tepam!");
-            }
-
+            if (!FeetAndTeleportLocation.getBlock().isEmpty()) continue;
+            if (!HeadLocation.getBlock().isEmpty()) continue;
+            if (!StandingLocation.getBlock().isSolid()) continue;
+            
             suitableSpot = true;
         }
 
